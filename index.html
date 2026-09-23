@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Expense Tracker</h1>
+      <p>Track your daily expenses easily</p>
+    </header>
+
+    <section class="summary">
+      <div class="card">
+        <span>Total Expense</span>
+        <h2 id="total">₹0.00</h2>
+      </div>
+      <div class="card">
+        <span>Number of Expenses</span>
+        <h2 id="count">0</h2>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Add Expense</h2>
+      <form id="expenseForm">
+        <input type="date" id="date" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option>Food</option>
+          <option>Travel</option>
+          <option>Shopping</option>
+          <option>Bills</option>
+          <option>Education</option>
+          <option>Other</option>
+        </select>
+        <input type="number" id="amount" placeholder="Amount" min="0" step="0.01" required>
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="table-card">
+      <div class="table-heading">
+        <h2>Expense History</h2>
+        <button class="clear-btn" id="clearBtn">Clear All</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="expenseList"></tbody>
+        </table>
+      </div>
+
+      <p id="emptyMessage">No expenses added yet.</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
